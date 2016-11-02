@@ -1,0 +1,173 @@
+<HTML>
+
+<!-- Mirrored from www.pierre-blanche-escalade.fr/topo/photos.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Aug 2014 17:39:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD>
+<TITLE>Topo - Pierre Blanche -</TITLE>
+<META NAME="Author" CONTENT="David, Jerome">
+<STYLE TYPE="text/css">
+  A { text-decoration: none;
+      color: #dddddd;}
+</STYLE>
+<SCRIPT>
+<!-- First draft of the scripts was written in August 2004 by Jerome David. -->
+<!-- You can use the scripts if you want to, as long as you include proper  -->
+<!-- credits. This still applies if you tempered with the scripts to better -->
+<!-- fit your needs.  -->
+var imgi = -1;
+var nbImg = 21;
+var images = new Array( "pancarte", "rambarde", "vue_du_haut", "riviere", "passerelle_barque", "sortie_diedre", "falaise", "rappel", "danielle1", "dalle_branlant", "relais", "le_bi", "willy_sans_les_pieds",
+                        "decompose_7a+_1", "decompose_7a+_2", "decompose_7a+_3", "decompose_7a+_4", "decompose_7a+_5",
+                        "decompose_branlant_1", "decompose_branlant_2", "decompose_branlant_3");
+var comments = new Array( "1. Pancarte indiquant la direction de la falaise depuis le parking.",
+                          "2. La rambarde.",
+                          "3. Vue du haut en direction de la passerelle.",
+                          "4. La M&egrave;re presque &agrave; sec.",
+                          "5. Vue de la passerelle en direction de la falaise.",
+                          "6. Sortie du grand di&egrave;dre.",
+                          "7. Vue de la falaise depuis l'autre c&ocirc;t&eacute; de la rivi&egrave;re.",
+                          "8. Descente en rappel.",
+                          "9. ",
+                          "10. ",
+                          "11. ",
+                          "12. ",
+                          "13. Realis&eacute;e sans trucage.",
+                          "14. D&eacute;but de la 7a+.",
+                          "15. Crochettage talon dans la 7a+.",
+                          "16. Crois&eacute; au niveau de la 3&egrave;me d&eacute;gaine de la 7a+.",
+                          "17.",
+                          "18. Sortie du d&eacute;vers de la 7a+.",
+                          "19.",
+                          "20.",
+                          "21."
+ );
+var orientations = new Array( "V", "V", "H", "V", "H", "V", "H", "H","H", "H", "V", "V", "V",  "V", "V", "V", "V", "V", "V", "V", "V" );
+
+
+function next_image() {
+  imgi = imgi + 1;
+  if (imgi >= nbImg) {
+    imgi = 0;
+  }
+  refresh_image();
+}
+
+function prev_image() {
+  imgi = imgi - 1;
+  if (imgi < 0) {
+    imgi = nbImg - 1;
+  }
+  refresh_image();
+}
+
+function refresh_image() {
+
+  document.getElementById("description").innerHTML = "";
+  if (orientations[imgi] == "H") {
+    document.getElementById("pix").style.visibility = "hidden";
+    document.getElementById("image").style.visibility = "hidden";
+    document.getElementById("pix").style.width = 602;
+    document.getElementById("pix").style.height = 452;
+    document.getElementById("pix").style.left = 85;
+    document.getElementById("image").src = "photos/" + images[imgi] + ".jpg";
+    document.getElementById("image").style.width = 600;
+    document.getElementById("image").style.height = 450;
+    document.getElementById("pix").style.visibility = "visible";
+    document.getElementById("image").style.visibility = "visible";
+    document.getElementById("menu").style.top = 576;
+    document.getElementById("box1").style.height = 567;
+    document.getElementById("box2").style.height = 563;
+    document.getElementById("box3").style.height = 520;
+    document.getElementById("box4").style.height = 518;
+  }
+  else {
+    document.getElementById("pix").style.visibility = "hidden";
+    document.getElementById("image").style.visibility = "hidden";
+    document.getElementById("pix").style.width = 452;
+    document.getElementById("pix").style.height = 602;
+    document.getElementById("pix").style.left = 160;
+    document.getElementById("image").src = "photos/" + images[imgi] + ".jpg";
+    document.getElementById("image").style.width = 450;
+    document.getElementById("image").style.height = 600;
+    document.getElementById("pix").style.visibility = "visible";
+    document.getElementById("image").style.visibility = "visible";
+    document.getElementById("menu").style.top = 576 + 150;
+    document.getElementById("box1").style.height = 567 + 150;
+    document.getElementById("box2").style.height = 563 + 150;
+    document.getElementById("box3").style.height = 520 + 150;
+    document.getElementById("box4").style.height = 518 + 150;
+  }
+  document.getElementById("description").innerHTML = comments[imgi];
+}
+
+</SCRIPT>
+</HEAD>
+<BODY ONLOAD="next_image()">
+
+<DIV ID="box1" STYLE="position: absolute; left: 5px; top: 5px; width: 762px; height: 567px; background-color: black;"></DIV>
+<DIV ID="box2" STYLE="position: absolute; left: 7px; top: 7px; width: 758px; height: 563px; background-color: gray;"></DIV>
+<DIV ID="box3" STYLE="position: absolute; left: 10px; top: 47px; width: 752px; height: 520px; background-color: black;"></DIV>
+<DIV ID="box4" STYLE="position: absolute; left: 11px; top: 48px; width: 750px; height: 518px; background-color: #778877;"></DIV>
+
+<DIV STYLE="position: absolute; left: 10px; top: 10px; width: 752px; height: 34px; background-color: black;"></DIV>
+<DIV STYLE="position: absolute; left: 11px; top: 11px; width: 750px; height: 32px; background-color: #666666;">
+<TABLE BORDER=0 COLS=2 LINES=1 WIDTH="100%" style="font: bold 16pt Arial;">
+  <TR>
+    <TD ALGIN=Left STYLE="color: 440000;">VOUVANT (PIERRE BLANCHE)</TD>
+    <TD ALIGN=Center STYLE="color: 000044;">Photos</TD>
+  </TR>
+</TABLE>
+</DIV>
+
+<DIV STYLE="position: absolute; left: 125px; top: 57px; width: 520px; height: 35px; background-color: black;">
+  <DIV STYLE="position: absolute; left: 1px; top: 1px; width: 518px; height: 33px; background-color: #dddddd; overflow: hidden; font: bold 11pt tahoma;">
+    <DIV ID="description" STYLE="margin: 5px;" ALIGN=Center>
+      Vue de la passerelle en direction de la falaise.
+    </DIV>
+  </DIV>
+</DIV>
+
+<A ID="next" HREF="javascript: prev_image()">
+<IMG BORDER=0 SRC="prev.gif" STYLE="position:absolute; left: 85px; top: 58px;">
+</A>
+
+<A ID="next" HREF="javascript: next_image()">
+<IMG BORDER=0 SRC="next.gif" STYLE="position:absolute; left: 653px; top: 58px;">
+</A>
+
+<DIV ID="pix" STYLE="position: absolute; overflow: hidden; top: 104px; left: 85px; width: 602px; height: 452px; background-color: black;">
+  <IMG ID="image" SRC="photos/passerelle-barque.html" STYLE="position: absolute; overflow: hidden; top: 1px; left: 1px; width: 600px; height: 450px">
+</DIV>
+
+<DIV ID="menu" STYLE="position: absolute; left: 5px; top: 576px; width: 762px; height: 34px; background-color: black;">
+  <DIV STYLE="position: absolute; left: 2px; top: 2px; width: 758px; height: 30px; background-color: gray;">
+    <DIV STYLE="position: absolute; left: 3px; top: 3px; width: 752px; height: 24px; background-color: black;">
+      <DIV STYLE="position: absolute; left: 1px; top: 1px; width: 750px; height: 22px; background-color: #778877;">
+        <TABLE BORDER=0 COLS=4 ROWS=1 WIDTH="100%" STYLE="font: bold 9pt Arial; color: #dddddd;">
+          <TR VALIGN=Center>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center WIDTH="20%">
+              <A HREF="acces.html">A c c &egrave; s</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center WIDTH="25%">
+              <A HREF="reglement.html">R &egrave; g l e m e n t</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center WIDTH="30%">
+              <A HREF="plan_voies.html">P l a n &nbsp; d e s &nbsp; v o i e s</A>
+            </TD>
+            <TD STYLE="background-color: #dddddd; border: solid black 1px;" ALIGN=Center>
+              <A HREF="photos.html" STYLE="color: #666666;">P h o t o s</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" WIDTH=22>
+              <A HREF="about.html">&nbsp; ?&nbsp;</A>
+            </TD>
+          </TR>
+        </TABLE>
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+
+</BODY>
+
+<!-- Mirrored from www.pierre-blanche-escalade.fr/topo/photos.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Aug 2014 17:39:36 GMT -->
+</HTML>

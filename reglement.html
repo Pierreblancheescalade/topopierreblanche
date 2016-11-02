@@ -1,0 +1,180 @@
+<HTML>
+
+<!-- Mirrored from www.pierre-blanche-escalade.fr/topo/reglement.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Aug 2014 17:39:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD>
+<TITLE>Topo - Pierre Blanche -</TITLE>
+<META NAME="Author" CONTENT="David, Jerome">
+<STYLE TYPE="text/css">
+  A { text-decoration: none;
+      color: #dddddd;}
+</STYLE>
+<SCRIPT>
+<!-- First draft of the scripts was written in August 2004 by Jerome David. -->
+<!-- You can use the scripts if you want to, as long as you include proper  -->
+<!-- credits. This still applies if you tempered with the scripts to better -->
+<!-- fit your needs.  -->
+var msg="Veuillez lire le r&egrave;glement en entier avant de poursuivre";
+var delta = 0;
+var TotalWidth = 1000;
+var scrollTimer;
+var timerset = 0;
+
+function scroll(s) {
+  delta += parseInt(-s);
+  if (delta > TotalWidth) {
+    delta = TotalWidth;
+  }
+  if (delta < 0) {
+    delta = 0;
+  }
+  document.getElementById("reglementText").style.marginTop = -delta;
+  scrollTimer = setTimeout("scroll("+s+")", 100);
+
+}
+
+function startScroll(s) {
+  scrollTimer = setTimeout("scroll("+s+")", 100);
+  timerset = 1;
+}
+
+function stopScroll() {
+  if (timerset == 1) {
+    clearTimeout(scrollTimer);
+  }
+  timerset = 0;
+}
+
+</SCRIPT>
+</HEAD>
+<BODY>
+
+<DIV STYLE="position: absolute; left: 5px; top: 5px; width: 760; height: 635; background-color: black;"></DIV>
+<DIV STYLE="position: absolute; left: 7px; top: 7px; width: 756; height: 631; background-color: gray;"></DIV>
+
+<DIV STYLE="position: absolute; left: 10px; top: 10px; width: 750px; height: 34px; background-color: black;"></DIV>
+<DIV STYLE="position: absolute; left: 11px; top: 11px; width: 748px; height: 32px; background-color: #666666;">
+<TABLE BORDER=0 COLS=2 LINES=1 WIDTH="100%" style="font: bold 16pt Arial;">
+  <TR>
+    <TD ALGIN=Left STYLE="color: 440000;">VOUVANT (PIERRE BLANCHE)</TD>
+    <TD ALIGN=Center STYLE="color: 000044;">R&egrave;glement</TD>
+  </TR>
+</TABLE>
+</DIV>
+
+<DIV ID="description" STYLE="position: absolute; left: 10px; top: 47px; width: 750; height: 588; background-color: black;">
+  <DIV STYLE="position: absolute; left: 1px; top: 1px; width: 748; height: 586; background-color: #778877;">
+    <DIV STYLE="position: absolute; left: 17px; top: 17px; width: 714px; height: 553px;"></DIV>
+    <DIV STYLE="background-color: black; position: absolute; left: 24px; top: 20px; width: 700px; height: 522px;"></DIV>
+    <DIV STYLE="background-color: Gray; position: absolute; left: 25px; top: 21px; width: 688px; height: 520px; overflow: hidden;">
+      <DIV ID="reglementText" STYLE="font: 13pt tahoma; margin-left: 10px; overflow: hidden;">
+<TABLE COLS=2 BORDERS=0 ROWS=1 STYLE="font: 13pt tahoma; margin-left: 10px;">
+<TR VALIGN="Top">
+  <TD WIDTH="20%"><U>Propri&eacute;t&eacute;:</U></TD>
+  <TD>Le rocher d'escalade de Pierre Blanche et ses acc&egrave;s sont situ&eacute;s sur une propri&eacute;t&eacute;
+      appartenant au Conseil G&eacute;n&eacute;ral de Vend&eacute;e.<BR>
+      L'ensemble du site est soumis aux m&ecirc;mes r&eacute;glementations que le massif forestier de Mervent-Vouvant.
+      En particulier, y sont interdits:<BR>
+      le camping, les feux et la d&eacute;pose d'ordures.
+  </TD>
+</TR>
+</TABLE>
+<BR>
+1. Le site est ouvert &agrave; tous les grimpeurs et au public, sous r&eacute;serve de l'application du pr&eacute;sent
+   r&egrave;glement.<BR><BR>
+2. Le stationnement des v&eacute;hicules est interdit hors du parking am&eacute;nag&eacute; &agrave; cet effet. Sont
+   seuls autoris&eacute;s &agrave; y d&eacute;roger: les cadres du Comit&eacute; D&eacute;partemental FFME de la
+   Vend&eacute;e, pour le transport de mat&eacute;riel lourd n&eacute;cessaire aux travaux d'entretien.<BR><BR>
+3. La modification de l'&eacute;quipement en place est interdite.<BR><BR>
+4. Le public spectateur veillera &agrave; ne pas g&ecirc;ner l'&eacute;volution des grimpeurs et en particulier ne
+   franchira pas la rambarde sup&eacute;rieure et sera tr&egrave;s vigilant &agrave; ne pas occasionner de chutes de
+   pierres du haut des voies.<BR><BR>
+5. Le site est prioritairement r&eacute;serv&eacute; aux activit&eacute;s du Comit&eacute; D&eacute;partemental FFME de
+   la Vend&eacute;e et de ses adh&eacute;rents.<BR><BR>
+6. Les animations et les escalades payantes organis&eacute;es par des associations &agrave; caract&egrave;re commercial y
+   sont interdites.<BR><BR>
+7. <B>Ne jetez pas &agrave; l'eau les pierres situ&eacute;es au bas des voies.</B> Pensez qu'elles constituent les
+   fondations de la terrasse qui vous permet d'acc&eacute;der &agrave la falaise, en retenant la terre l'hiver lorsque le
+   niveau de l'eau est haut (une partie du site a &eacute;t&eacute; remblay&eacute;e pour pouvoir &ecirc;tre accessible
+   toute l'ann&eacute;e).<BR><BR>
+8. Ramenez vos d&eacute;chets.<BR><BR>
+
+<DIV STYLE="text-align: center; font-size: 16pt;"><U>Consignes imp&eacute;ratives de s&eacute;curit&eacute;</U></DIV><BR>
+En escalade, la s&eacute;curit&eacute; est la premi&egrave;re chose qui doit vous venir &agrave; l'esprit avant de grimper.
+S&eacute;curit&eacute; pour vous, mais aussi celle des autres.<BR>
+N'utilisez que des baudriers r&eacute;gl&eacute;s &agrave; votre taille. M&eacute;fiez-vous des baudriers bricol&eacute;s
+avec des bouts de corde ou de sangle, m&ecirc;me pour grimper en moulinette. En cas de chute, vous risquez de vous retourner
+et de sortir du baudrier.<BR>
+V&eacute;rifiez toujours la fermeture de votre baudrier. Une &eacute;tiquette cousue &agrave; l'int&eacute;rieur de la
+ceinture vous indique son mode d'utilisation (verrouillage et encordement).<BR>
+L'assurage sur frein (de votre choix) est obligatoire. Le frein doit &ecirc;tre reli&eacute; au baudrier de l'assureur,
+jamais fix&eacute; &agrave; un arbre, un rocher, ou autre.<BR>
+N'assurez pas a l'ancienne (corde pass&eacute;e dans le dos), m&ecirc;me une personne plus l&eacute;g&egrave;re. Vous risquez
+de vous br&ucirc;ler et de l&acirc;cher la corde.<BR>
+Les ateliers poulie "moulinettes" doivent toujours &ecirc;tre fix&eacute;s sur deux points, et
+<B>la corde ne doit jamais passer directement dans les broches</B>. Le frottement de la corde sous tension lors de la descente
+use et fragilise les broches. D'autres personnes grimperont apr&egrave;s vous. Respectez le mat&eacute;riel mis &agrave;
+votre disposition et le travail des &eacute;quipeurs. Il est plus facile de changer un mousqueton usager que de remplacer
+une broche.<BR>
+Les relais et les rappels collectifs doivent &ecirc;tre faits sur deux points.<BR>
+Les descentes en rappel seront toutes contre-assur&eacute;es par une cordelette (noeud machard, prussik, fran&ccedil;ais, ...) ou un autobloquant m&eacute;canique (shunt ou autre). Le contre-assurage du bas (tr&egrave;s efficace s'il est
+r&eacute;alis&eacute; correctement) demande beaucoup de vigilance, ce qui est rarement le cas.<BR>
+Prenez l'habitude de vous encorder directement sur le baudrier m&ecirc;me si vous grimpez en moulinette. Evitez les
+mousquetons &agrave; vis sur le pontet. Faites &eacute;galement un noeud &agrave; l'autre extr&eacute;mit&eacute; de la corde
+(la pluspart des accidents d'escalade sont du aux cordes trop courtes lors de la redescente en moulinette).<BR>
+Ne partez jamais dans une voie sans le mat&eacute;riel n&eacute;cessaire pour redescendre par vos propres moyens (on se sait
+jamais ce qu'il peut arriver &agrave; votre assureur).<BR>
+Dans certaines voies, la configuration du rocher ne permet pas la prise de risques d&eacute;mesur&eacute;s. Les "vols" n'y sont
+pas gratuits. Soyez vigilants et &eacute;vitez de bavarder avec les autres assureurs au pied des voies.<BR>
+Annoncez clairement les ordres ("vach&eacute;", "relais", "rappel libre", ..., suivis du pr&eacute;nom de la personne &agrave;
+qui vous donnez l'ordre s'il y a confusion possible), ainsi que vos lanc&eacute;s de corde.<BR>
+N'encombrez pas les voies du secteur sportif avec des "moulinettes &agrave; demeure". Si vous avez choisi ces voies, cela
+veut dire que votre niveau d'autonomie induit l'escalade en t&ecirc;te.<BR>
+N'utilisez pas la rambarde sup&eacute;rieure comme point de fixation (les relais, rappels, et moulinettes sur la rambarde
+sont interdits).<BR>
+
+      </DIV>
+    </DIV>
+    <DIV STYLE="font: bold 12pt Arial; position: absolute; left: 235px; top: 550px; width: 500px; height: 40px; text-align: left;">
+      Veuillez lire le r&egrave;glement en entier avant de poursuivre.
+    </DIV>
+    <IMG SRC="scrollbarTop.gif" ID="reglementSBT" STYLE="position: absolute; left: 713px; top: 21px; width: 10px; height: 10px;"
+         ONMOUSEDOWN='startScroll("20");' ONMOUSEUP='stopScroll();' ONMOUSELEAVE='stopScroll();'>
+    <IMG SRC="scrollbarBottom.gif" ID="reglementSBB" STYLE="position: absolute; left: 713px; top: 531px; width: 10px; height: 10px;"
+         ONMOUSEDOWN='startScroll("-20");' ONMOUSEUP='stopScroll();' ONMOUSELEAVE='stopScroll();'>
+    <IMG SRC="scrollbarMiddle.gif" ID="reglementSBM" STYLE="position: absolute; left: 713px; top: 31px; width: 10px; height: 500px;">
+  </DIV>
+</DIV>
+
+<DIV ID="menu" STYLE="position: absolute; left: 5px; top: 644px; width: 760px; height: 34px; background-color: black;">
+  <DIV STYLE="position: absolute; left: 2px; top: 2px; width: 756px; height: 30px; background-color: gray;">
+    <DIV STYLE="position: absolute; left: 3px; top: 3px; width: 750px; height: 24px; background-color: black;">
+      <DIV STYLE="position: absolute; left: 1px; top: 1px; width: 748px; height: 22px; background-color: #778877;">
+        <TABLE BORDER=0 COLS=5 ROWS=1 WIDTH="100%" STYLE="font: bold 9pt Arial; color: #dddddd;">
+          <TR VALIGN=Center>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center WIDTH="20%">
+              <A HREF="acces.html">A c c &egrave; s</A>
+            </TD>
+            <TD STYLE="background-color: #dddddd; border: solid black 1px;" ALIGN=Center WIDTH="25%">
+              <A HREF="reglement.html" STYLE="color: #666666;">R &egrave; g l e m e n t</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center WIDTH="30%">
+              <A HREF="plan_voies.html">P l a n &nbsp; d e s &nbsp; v o i e s</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center>
+              <A HREF="photos.html">P h o t o s</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" WIDTH=22>
+              <A HREF="about.html">&nbsp; ?&nbsp;</A>
+            </TD>
+          </TR>
+        </TABLE>
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+
+</BODY>
+
+<!-- Mirrored from www.pierre-blanche-escalade.fr/topo/reglement.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Aug 2014 17:39:39 GMT -->
+</HTML>

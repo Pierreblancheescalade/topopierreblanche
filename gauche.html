@@ -1,0 +1,320 @@
+<HTML>
+
+<!-- Mirrored from www.pierre-blanche-escalade.fr/topo/gauche.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Aug 2014 17:40:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD>
+<TITLE>Topo - Pierre Blanche -</TITLE>
+<META NAME="Author" CONTENT="David, Jerome">
+<STYLE TYPE="text/css">
+  A { text-decoration: none;
+      color: #dddddd;}
+</STYLE>
+<SCRIPT>
+<!-- First draft of the scripts was written in August 2004 by Jerome David. -->
+<!-- You can use the scripts if you want to, as long as you include proper  -->
+<!-- credits. This still applies if you tempered with the scripts to better -->
+<!-- fit your needs.  -->
+OPACITY = 70;
+c = 0;
+r = 1;
+b = 1;
+v = 1;
+t = 1;
+enb = 1;
+
+function init() {
+  if (document.getElementById("cache2").addEventListener) {
+    document.getElementById("cache2").addEventListener("mousemove",update,false);
+  }
+  set_opacity();
+}
+
+function opacity_plus(s) {
+  if (OPACITY >= (100 - (10 * s))) {
+    OPACITY = 100;
+  }
+  else {
+    OPACITY = OPACITY + 10 * s;
+  }
+  set_opacity();
+}
+
+function opacity_moins(s) {
+  if (OPACITY <= (s * 10)) {
+    OPACITY = 0;
+  }
+  else {
+    OPACITY = OPACITY - s * 10;
+  }
+  set_opacity();
+}
+
+function set_opacity() {
+  elem = document.getElementById("gauche_fond");
+  if (elem.style.MozOpacity != null) {
+    elem.style.MozOpacity = (OPACITY / 100);
+  }
+  else {
+    elem.filters.alpha.opacity = OPACITY;
+  }
+}
+
+function toggle(img) {
+  src = img.src;
+  if (src.indexOf("_hover") > 0) {
+    img.src = src.substr(0,src.lastIndexOf("_hover.html")) + ".gif";
+  }
+  else {
+    img.src = src.substr(0,src.lastIndexOf(".gif")) + "_hover.gif";
+  }
+}
+
+function toggle_voies() {
+  if (v == 0) {
+    document.getElementById("gauche_voies").style.visibility = "visible";
+    document.getElementById("gauche_voies2").style.visibility = "visible";
+    v = 1;
+  }
+  else {
+    document.getElementById("gauche_voies").style.visibility = "hidden";
+    document.getElementById("gauche_voies2").style.visibility = "hidden";
+    v = 0;
+  }
+  img = document.getElementById("voies");
+  src = img.src;
+  if (src.indexOf("_hover") > 0) {
+    img.src = src.substr(0,src.lastIndexOf("_hover.html")) + ".gif";
+  }
+  else {
+    img.src = src.substr(0,src.lastIndexOf(".gif")) + "_hover.gif";
+  }
+}
+
+function toggle_relais() {
+  if (r == 0) {
+    document.getElementById("gauche_relais").style.visibility = "visible";
+    document.getElementById("gauche_relais2").style.visibility = "visible";
+    r = 1;
+  }
+  else {
+    document.getElementById("gauche_relais").style.visibility = "hidden";
+    document.getElementById("gauche_relais2").style.visibility = "hidden";
+    r = 0;
+  }
+  img = document.getElementById("relais");
+  src = img.src;
+  if (src.indexOf("_hover") > 0) {
+    img.src = src.substr(0,src.lastIndexOf("_hover.html")) + ".gif";
+  }
+  else {
+    img.src = src.substr(0,src.lastIndexOf(".gif")) + "_hover.gif";
+  }
+}
+
+function toggle_broches() {
+  if (b == 0) {
+    document.getElementById("gauche_broches").style.visibility = "visible";
+    document.getElementById("gauche_broches2").style.visibility = "visible";
+    b = 1;
+  }
+  else {
+    document.getElementById("gauche_broches").style.visibility = "hidden";
+    document.getElementById("gauche_broches2").style.visibility = "hidden";
+    b = 0;
+  }
+  img = document.getElementById("broches");
+  src = img.src;
+  if (src.indexOf("_hover") > 0) {
+    img.src = src.substr(0,src.lastIndexOf("_hover.html")) + ".gif";
+  }
+  else {
+    img.src = src.substr(0,src.lastIndexOf(".gif")) + "_hover.gif";
+  }
+}
+
+function toggle_text() {
+  if (t == 0) {
+    document.getElementById("gauche_text").style.visibility = "visible";
+    document.getElementById("gauche_text2").style.visibility = "visible";
+    t = 1;
+  }
+  else {
+    document.getElementById("gauche_text").style.visibility = "hidden";
+    document.getElementById("gauche_text2").style.visibility = "hidden";
+    t = 0;
+  }
+  img = document.getElementById("text");
+  src = img.src;
+  if (src.indexOf("_hover") > 0) {
+    img.src = src.substr(0,src.lastIndexOf("_hover.html")) + ".gif";
+  }
+  else {
+    img.src = src.substr(0,src.lastIndexOf(".gif")) + "_hover.gif";
+  }
+}
+
+function update(evt) {
+  if (evt == null) {
+    evt = event;
+  }
+  if (enb >= 3) {
+    zoom(evt.clientX + document.body.scrollLeft - 11, evt.clientY + document.body.scrollTop - 47);
+    enb = 0;
+  }
+  else {
+    enb = enb + 1;
+  }
+}
+
+function zoom(x,y) {
+  //document.getElementById("description").innerHTML = "&nbsp;<B>Event: </B>" + x + " &nbsp; " + y;
+  clipx = - x / 800 * 1600 + 75;
+  clipy =  - y / 600 * 1200 + 75;
+  if (clipx < -1450) {
+    clipx = -1450;
+  }
+  if (clipx > 0) {
+    clipx = 0;
+  }
+  if (clipy < -1050) {
+    clipy = -1050;
+  }
+  if (clipy > 0) {
+    clipy = 0;
+  }
+  document.getElementById("detail").style.marginLeft = clipx;
+  document.getElementById("detail").style.marginTop = clipy;
+  document.getElementById("gauche_broches2").style.marginLeft = clipx;
+  document.getElementById("gauche_broches2").style.marginTop = clipy;
+  document.getElementById("gauche_voies2").style.marginLeft = clipx;
+  document.getElementById("gauche_voies2").style.marginTop = clipy;
+  document.getElementById("gauche_relais2").style.marginLeft = clipx;
+  document.getElementById("gauche_relais2").style.marginTop = clipy;
+  document.getElementById("gauche_text2").style.marginLeft = clipx;
+  document.getElementById("gauche_text2").style.marginTop = clipy;
+}
+
+</SCRIPT>
+</HEAD>
+<BODY ONLOAD="init()">
+
+<DIV STYLE="position: absolute; left: 5px; top: 5px; width: 812; height: 804; background-color: black;"></DIV>
+<DIV STYLE="position: absolute; left: 7px; top: 7px; width: 808; height: 800; background-color: gray;"></DIV>
+
+<DIV STYLE="position: absolute; left: 10px; top: 10px; width: 802px; height: 34px; background-color: black;"></DIV>
+<DIV STYLE="position: absolute; left: 11px; top: 11px; width: 800px; height: 32px; background-color: #666666;">
+<TABLE BORDER=0 COLS=2 LINES=1 WIDTH="100%" style="font: bold 16pt Arial;">
+  <TR>
+    <TD ALGIN=Left STYLE="color: 440000;">VOUVANT (PIERRE BLANCHE)</TD>
+    <TD ALIGN=Center STYLE="color: 000044;">Secteur de gauche</TD>
+  </TR>
+</TABLE>
+</DIV>
+
+<DIV STYLE="position: absolute; left: 10px; top: 47px; width: 802px; height: 602px; background-color: black;">
+<IMG ID="gauche_fond" SRC="gauche_fond.jpg"
+     STYLE="position: absolute; left: 1px; top: 1px; width: 800; height: 600; filter:alpha(opacity=100)">
+<IMG ID="gauche_broches" SRC="gauche_broches.gif"
+     STYLE="position: absolute; left: 1px; top: 1px; width: 800; height: 600; filter:alpha(opacity=100)">
+<IMG ID="gauche_voies" SRC="gauche_voies.gif"
+     STYLE="position: absolute; left: 1px; top: 1px; width: 800; height: 600; filter:alpha(opacity=100)">
+<IMG ID="gauche_relais" SRC="gauche_relais.gif"
+     STYLE="position: absolute; left: 1px; top: 1px; width: 800; height: 600; filter:alpha(opacity=100)">
+<IMG ID="gauche_text" SRC="gauche_text.gif"
+     STYLE="position: absolute; left: 1px; top: 1px; width: 800; height: 600; filter:alpha(opacity=100)">
+<IMG ID="cache" SRC="empty.gif"
+     STYLE="position: absolute; left: 1px; top: 1px; width: 800; height: 600;" ONMOUSEMOVE="update()">
+</DIV>
+<DIV ID="cache2" STYLE="position: absolute; left: 11px; top: 48px; width: 800; height: 600;">
+</DIV>
+
+<DIV ID="zoom" STYLE="background-color: black; position: absolute; left: 10px; top: 652px; width: 152; height: 152; overflow: hidden; background-color: black;"></DIV>
+<DIV STYLE="position: absolute; left: 11px; top: 653px; width: 150px; height: 150px; overflow: hidden;">
+  <IMG ID="detail" SRC="gauche_fond.jpg" STYLE="position: absolute; left: 0px; top: 0px; width: 1600px; height: 1200px; overflow: hidden;">
+  <IMG ID="gauche_broches2" SRC="gauche_broches.gif" STYLE="position: absolute; left: 0px; top: 0px; width: 1600px; height: 1200px; overflow: hidden;">
+  <IMG ID="gauche_voies2" SRC="gauche_voies.gif" STYLE="position: absolute; left: 0px; top: 0px; width: 1600px; height: 1200px; overflow: hidden;">
+  <IMG ID="gauche_relais2" SRC="gauche_relais.gif" STYLE="position: absolute; left: 0px; top: 0px; width: 1600px; height: 1200px; overflow: hidden;">
+  <IMG ID="gauche_text2" SRC="gauche_text.gif" STYLE="position: absolute; left: 0px; top: 0px; width: 1600px; height: 1200px; overflow: hidden;">
+</DIV>
+
+<A HREF="gauche.jpg">
+  <IMG ID="save" SRC="save.gif" STYLE="position: absolute; left: 165px; top: 652px;" BORDER=0
+       ONMOUSEOVER="toggle(this)" ONMOUSEOUT="toggle(this)">
+</A>
+<IMG ID="plus" SRC="plus.gif" STYLE="position: absolute; left: 165px; top: 674px;"
+     ONMOUSEOVER="toggle(this)" ONMOUSEOUT="toggle(this)" ONCLICK="opacity_plus(1)">
+<IMG ID="moins" SRC="moins.gif" STYLE="position: absolute; left: 165px; top: 696px;"
+     ONMOUSEOVER="toggle(this)" ONMOUSEOUT="toggle(this)" ONCLICK="opacity_moins(1)">
+<IMG ID="relais" SRC="relais.gif" STYLE="position: absolute; left: 165px; top: 718px;"
+     ONMOUSEOVER="toggle(this)" ONMOUSEOUT="toggle(this)" ONCLICK="toggle_relais()">
+<IMG ID="voies" SRC="voies.gif" STYLE="position: absolute; left: 165px; top: 740px;"
+     ONMOUSEOVER="toggle(this)" ONMOUSEOUT="toggle(this)" ONCLICK="toggle_voies()">
+<IMG ID="broches" SRC="broches.gif" STYLE="position: absolute; left: 165px; top: 762px;"
+     ONMOUSEOVER="toggle(this)" ONMOUSEOUT="toggle(this)" ONCLICK="toggle_broches()">
+<IMG ID="text" SRC="text.gif" STYLE="position: absolute; left: 165px; top: 784px;"
+     ONMOUSEOVER="toggle(this)" ONMOUSEOUT="toggle(this)" ONCLICK="toggle_text()">
+
+<DIV ID="description" STYLE="position: absolute; left: 189px; top: 652px; width: 623px; height: 152px; font: 10pt fixed; background-color: black; overflow: hidden;">
+  <DIV STYLE="position: absolute; left: 1px; top: 1px; width: 621px; height: 150px; background-color: #778877; overflow: hidden;">
+    <DIV STYLE="margin: 5px;">
+      <TABLE COLS=4 BORDER=0 WIDTH="100%">
+        <TR VALIGN=Center>
+          <TD><FONT COLOR=#3344aa>1.</FONT>&nbsp; Initiation<BR></TD>
+          <TD><FONT COLOR=#3344aa>2.</FONT>&nbsp; Initiation<BR></TD>
+          <TD><FONT COLOR=#3344aa>3.</FONT>&nbsp; Initiation<BR></TD>
+          <TD><FONT COLOR=#3344aa>4.</FONT>&nbsp; Initiation<BR></TD>
+        </TR>
+        <TR VALIGN=Center>
+          <TD><FONT COLOR=#3344aa>5.</FONT>&nbsp; Initiation<BR></TD>
+          <TD><FONT COLOR=#3344aa>6.</FONT>&nbsp; 5+<BR></TD>
+          <TD><FONT COLOR=#3344aa>7.</FONT>&nbsp; 6a<BR></TD>
+          <TD><FONT COLOR=#3344aa>8.</FONT>&nbsp; 6c<BR></TD>
+        </TR>
+        <TR VALIGN=Center>
+          <TD><FONT COLOR=#3344aa>9.</FONT>&nbsp; 6a<BR></TD>
+          <TD><FONT COLOR=#3344aa>10.</FONT> 6a<BR></TD>
+          <TD COLSPAN=2><FONT COLOR=#3344aa>11.</FONT> 6a&nbsp; &nbsp; &nbsp; &nbsp; Variante de droite: 6a<BR></TD>
+        </TR>
+        <TR VALIGN=Center>
+          <TD COLSPAN=4>
+          </TD>
+        </TR>
+      </TABLE>
+    </DIV>
+  </DIV>
+</DIV>
+
+<DIV ID="menu" STYLE="position: absolute; left: 5px; top: 813px; width: 812px; height: 34px; background-color: black;">
+  <DIV STYLE="position: absolute; left: 2px; top: 2px; width: 808px; height: 30px; background-color: gray;">
+    <DIV STYLE="position: absolute; left: 3px; top: 3px; width: 802px; height: 24px; background-color: black;">
+      <DIV STYLE="position: absolute; left: 1px; top: 1px; width: 800px; height: 22px; background-color: #778877;">
+        <TABLE BORDER=0 COLS=4 ROWS=1 WIDTH="100%" STYLE="font: bold 9pt Arial; color: #dddddd;">
+          <TR VALIGN=Center>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center WIDTH="20%">
+              <A HREF="acces.html">A c c &egrave; s</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center WIDTH="25%">
+              <A HREF="reglement.html">R &egrave; g l e m e n t</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center WIDTH="30%">
+              <A HREF="plan_voies.html">P l a n &nbsp; d e s &nbsp; v o i e s</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" ALIGN=Center>
+              <A HREF="photos.html">P h o t o s</A>
+            </TD>
+            <TD STYLE="background-color: #666666; border: solid black 1px;" WIDTH=22>
+              <A HREF="about.html">&nbsp; ?&nbsp;</A>
+            </TD>
+          </TR>
+        </TABLE>
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+
+<IMG SRC="legende.gif" STYLE="position:absolute; left: 13px; top: 545px;">
+
+</BODY>
+
+<!-- Mirrored from www.pierre-blanche-escalade.fr/topo/gauche.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Aug 2014 17:41:01 GMT -->
+</HTML>
